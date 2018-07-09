@@ -208,7 +208,7 @@
 	<section>
 		<!--video-->
 		<video width="100%" id="video" autoplay loop>
-			<source src="images/clothes.mp4" type="video/mp4"> Your browser does not support the video tag.
+			<source src="images/cloth-2.mp4" type="video/mp4"> Your browser does not support the video tag.
 		</video>
 	</section>
 	<section>
@@ -1048,7 +1048,7 @@
 
 		<!-- Modal content -->
 		<div class="modal-content">
-			<span class="close">&times;</span>
+			<span class="close" data-dismiss="modal">&times;</span>
 			<div class="container">
 				<h1 style="text-align: center;">Login/SignUp</h1>
 			</div>
@@ -1099,15 +1099,14 @@
 								</div>
 								<div id="sectionB" class="tab-pane fade">
 									<div class="innter-form">
-										<form class="sa-innate-form" method="post">
-											<label>Name</label>
-											<input type="text" name="username">
+										<form class="sa-innate-form">
+											
 											<label>Email Address</label>
-											<input type="text" name="username">
+											<input type="text" id="signup-email-text">
 											<label>Password</label>
-											<input type="password" name="password">
-											<button type="submit">Join now</button>
-											<p>By clicking Join now, you agree to hifriends's User Agreement, Privacy Policy, and Cookie Policy.</p>
+											<input type="password" id="signup-password-text">
+											<button type="button" onclick="signup()" >Join now</button>
+											<p>By clicking Join now, you agree to RentMine's <a href="#">User Agreement, Privacy Policy, and Cookie Policy</a>.</p>
 										</form>
 									</div>
 									<div class="social-login">
@@ -1137,6 +1136,7 @@
 		</div>
 
 	</div>
+	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>

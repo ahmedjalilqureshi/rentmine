@@ -1,5 +1,13 @@
 /*price range*/
-
+var config = {
+    apiKey: "AIzaSyA7rfBhIutZdEG0R7xANM3Wy27lV7GP2-Q",
+    authDomain: "yaseen-site.firebaseapp.com",
+    databaseURL: "https://yaseen-site.firebaseio.com",
+    projectId: "yaseen-site",
+    storageBucket: "yaseen-site.appspot.com",
+    messagingSenderId: "1093689830600"
+  };
+  firebase.initializeApp(config);
  $('#sl2').slider();
 
 	var RGBChange = function() {
@@ -54,8 +62,34 @@ $(document).ready(function(){
 			modal.style.display = "none";
 		}
 	}
-    
 
+    function signup(){
+
+ 	var email = document.getElementById("signup-email-text").value;
+	var password = document.getElementById("signup-password-text").value;	
+		 firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+			// Handle Errors here.
+			var errorCode = error.code;
+			if(errorCode==="auth/email-already-in-use"){
+				window.alert("email id already in use");
+
+			}
+			else if(errorCode==="auth/weak-password"){
+				window.alert("password is weak");
+
+			}
+			window.alert = errorCode;
+			var errorMessage = error.message;
+			// ...
+		  });
+		}
+	
+	
+	// var signup_btn= document.getElementById("signup-btn");
+	// addEventListener("click",signup_btn,function(){
+	// 	var email = document.getElementById("signup-email-text").value;
+	// 	window.alert(email);
+	// })
     
     
     
